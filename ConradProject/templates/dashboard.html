@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="What is Accordion">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{url_for( 'static', filename='styles/nicepage.css' )}}" media="screen">
+    <link rel="stylesheet" href="{{url_for( 'static', filename='styles/dashboard.css' )}}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{url_for( 'static', filename='scripts/jquery-1.9.1.min.js' )}}" defer=" "></script>
+    <script class="u-script" type="text/javascript" src="{{url_for( 'static', filename='scripts/nicepage.js' )}}" defer=" "></script>
+    <meta name="generator" content="Nicepage 3.27.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "",
+            "logo": "images/default-logo.png"
+        }
+    </script>
+    <meta name="theme-color" content="#6f809e">
+    <meta property="og:title" content="Dashboard">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="u-body">
+    <header class="u-clearfix u-header u-header" id="sec-c16b">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <nav class="u-align-left u-menu u-menu-dropdown u-nav-spacing-25 u-offcanvas u-menu-1">
+                <div class="menu-collapse">
+                    <a class="u-button-style u-nav-link" href="#" style="padding: 4px 0px; font-size: calc(1em + 8px);">
+                        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302"><use xlink:href="#svg-7b92"></use></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-7b92" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;" xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                    </a>
+                </div>
+                <div class="u-nav-container">
+                    <ul class="u-nav u-spacing-25 u-unstyled">
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda/reserva" style="padding: 8px 0px;">Habitacion</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/perfil/admindashboard" style="padding: 8px 0px;">Dashboard</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda" style="padding: 8px 0px;">Reservar</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio" style="padding: 8px 0px;">Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="u-nav-container-collapse">
+                    <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                        <div class="u-inner-container-layout u-sidenav-overflow">
+                            <div class="u-menu-close"></div>
+                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda/reserva" style="padding: 8px 0px;">Habitacion</a>
+                                </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
+                                </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/perfil/admindashboard" style="padding: 8px 0px;">Dashboard</a>
+                                </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda" style="padding: 8px 0px;">Reservar</a>
+                                </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio" style="padding: 8px 0px;">Inicio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+                </div>
+            </nav>
+            <a href="#" class="u-image u-logo u-image-1" src="">
+                <img src="{{url_for( 'static', filename='images/default-logo.png' )}}" class="u-logo-image u-logo-image-1">
+            </a>
+        </div>
+    </header>
+    <section class="u-align-center u-clearfix u-section-1" id="sec-8349">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
+                <ul class="u-border-2 u-border-palette-1-base u-spacing-10 u-tab-list u-unstyled" role="tablist">
+                    <li class="u-tab-item" role="presentation">
+                        <a class="active u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-1" id="link-tab-3359" href="#tab-3359" role="tab" aria-controls="tab-3359" aria-selected="true">Usuarios</a>
+                    </li>
+                    <li class="u-tab-item" role="presentation">
+                        <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-2" id="link-tab-5b0f" href="#tab-5b0f" role="tab" aria-controls="tab-5b0f" aria-selected="false">Habitaciones</a>
+                    </li>
+                    <li class="u-tab-item" role="presentation">
+                        <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-3" id="link-tab-5729" href="#tab-5729" role="tab" aria-controls="tab-5729" aria-selected="false">&nbsp;Comentarios</a>
+                    </li>
+                </ul>
+                <div class="u-tab-content">
+                    <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-3359" role="tabpanel" aria-labelledby="link-tab-3359">
+                        <div class="u-container-layout u-container-layout-1">
+                            <div class="u-form u-form-1">
+                                <form action="https://nicepage.com/editor/Forms/Process" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                                    <input type="hidden" id="siteId" name="siteId" value="813941">
+                                    <input type="hidden" id="pageId" name="pageId" value="813947">
+                                    <div class="u-form-group u-form-select u-form-group-1">
+                                        <label for="select-0646" class="u-form-control-hidden u-label"></label>
+                                        <div class="u-form-select-wrapper">
+                                            <select id="select-0646" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                          <option value="usuarios">usuarios</option>
+                          <option value="administradores">administradores</option>
+                        </select>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div class="u-align-right u-form-group u-form-submit">
+                                        <a href="#" class="u-btn u-btn-submit u-button-style">Listar</a>
+                                        <input type="submit" value="submit" class="u-form-control-hidden">
+                                    </div>
+                                    <div class="u-form-send-message u-form-send-success"> Gracias! Tu mensaje ha sido enviado. </div>
+                                    <div class="u-form-send-error u-form-send-message"> No se puede enviar su mensaje. Por favor, corrija los errores y vuelva a intentarlo. </div>
+                                    <input type="hidden" value="" name="recaptchaResponse">
+                                </form>
+                            </div>
+                            <div class="u-expanded-width u-table u-table-responsive u-table-1">
+                                <table class="u-table-entity">
+                                    <colgroup>
+                                        <col width="23.2%">
+                                        <col width="16.7%">
+                                        <col width="19.4%">
+                                        <col width="40.7%">
+                                    </colgroup>
+                                    <tbody class="u-table-alt-grey-5 u-table-body">
+                                        <tr style="height: 59px;">
+                                            <td class="u-table-cell">Nombre</td>
+                                            <td class="u-table-cell">Ultimo Login</td>
+                                            <td class="u-table-cell">Permisos</td>
+                                            <td class="u-table-cell">Accion</td>
+                                        </tr>
+                                        <tr style="height: 45px;">
+                                            <td class="u-table-cell">Row 1</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell u-table-cell-7">Lista de permisos</td>
+                                            <td class="u-table-cell u-table-cell-8">Aqui va el switch</td>
+                                        </tr>
+                                        <tr style="height: 45px;">
+                                            <td class="u-table-cell">Row 2</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell"> Lista de permisos</td>
+                                            <td class="u-table-cell"> Aqui va el switch</td>
+                                        </tr>
+                                        <tr style="height: 45px;">
+                                            <td class="u-table-cell">Row 3</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell"> Lista de permisos</td>
+                                            <td class="u-table-cell"> Aqui va el switch</td>
+                                        </tr>
+                                        <tr style="height: 45px;">
+                                            <td class="u-table-cell">Row 4</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell"> Lista de permisos</td>
+                                            <td class="u-table-cell"> Aqui va el switch</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-align-left u-container-style u-tab-pane u-white u-tab-pane-2" id="tab-5b0f" role="tabpanel" aria-labelledby="link-tab-5b0f">
+                        <div class="u-container-layout u-container-layout-2">
+                            <div class="u-table u-table-responsive u-table-2">
+                                <table class="u-table-entity">
+                                    <colgroup>
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                    </colgroup>
+                                    <thead class="u-palette-4-base u-table-header u-table-header-1">
+                                        <tr style="height: 21px;">
+                                            <th class="u-border-1 u-border-palette-4-base u-table-cell">Habitacion</th>
+                                            <th class="u-border-1 u-border-palette-4-base u-table-cell">Capacidad</th>
+                                            <th class="u-border-1 u-border-palette-4-base u-table-cell">Tamano</th>
+                                            <th class="u-border-1 u-border-palette-4-base u-table-cell">Precio</th>
+                                            <th class="u-border-1 u-border-palette-4-base u-table-cell">Accion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="u-table-body">
+                                        <tr style="height: 75px;">
+                                            <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-26">Row 1</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">100</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-30">Aqui va un checkbox</td>
+                                        </tr>
+                                        <tr style="height: 76px;">
+                                            <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-31">Row 2</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">100</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Aqui va un checkbox</td>
+                                        </tr>
+                                        <tr style="height: 76px;">
+                                            <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-36">Row 3</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">120</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Aqui va un checkbox</td>
+                                        </tr>
+                                        <tr style="height: 76px;">
+                                            <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-41">Row 4</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">120</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Aqui va un checkbox</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="https://nicepage.dev" class="u-btn u-button-style u-btn-2">Agregar</a>
+                            <a href="https://nicepage.com/templates" class="u-btn u-button-style u-btn-3">Eliminar</a>
+                            <a href="https://nicepage.com/c/table-html-templates" class="u-btn u-button-style u-btn-4">Editar</a>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-tab-pane u-white u-tab-pane-3" id="tab-5729" role="tabpanel" aria-labelledby="link-tab-5729">
+                        <div class="u-container-layout u-container-layout-3">
+                            <div class="u-table u-table-responsive u-table-3">
+                                <table class="u-table-entity">
+                                    <colgroup>
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                    </colgroup>
+                                    <thead class="u-black u-table-header u-table-header-2">
+                                        <tr style="height: 21px;">
+                                            <th class="u-border-1 u-border-black u-table-cell">Habitacion</th>
+                                            <th class="u-border-1 u-border-black u-table-cell">Usuario</th>
+                                            <th class="u-border-1 u-border-black u-table-cell">Comentario</th>
+                                            <th class="u-border-1 u-border-black u-table-cell">Calificacion</th>
+                                            <th class="u-border-1 u-border-black u-table-cell"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="u-table-body">
+                                        <tr style="height: 75px;">
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 1</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                                        </tr>
+                                        <tr style="height: 76px;">
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 2</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                                        </tr>
+                                        <tr style="height: 76px;">
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 3</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                                        </tr>
+                                        <tr style="height: 76px;">
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 4</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="https://nicepage.best" class="u-btn u-button-style u-btn-5">Eliminar</a>
+                            <a href="https://nicepage.best" class="u-btn u-button-style u-btn-6">Eliminar</a>
+                            <a href="https://nicepage.best" class="u-btn u-button-style u-btn-7">Eliminar</a>
+                            <a href="https://nicepage.best" class="u-btn u-button-style u-btn-8">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-93a7">
+        <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+
+
+    <footer class="u-clearfix u-footer u-grey-80" id="sec-50e8">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-align-center u-container-style u-group u-group-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-1">
+                    <p class="u-small-text u-text u-text-variant u-text-1">Copyright 2021 Equipo 1 Grupo 55 Mintic</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+        <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+            <span>Website Templates</span>
+        </a>
+        <p class="u-text">
+            <span>created with</span>
+        </p>
+        <a class="u-link" href="https://nicepage.com/" target="_blank">
+            <span>Website Builder Software</span>
+        </a>.
+    </section>
+</body>
+
+</html>
