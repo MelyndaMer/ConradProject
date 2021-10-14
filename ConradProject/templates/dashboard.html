@@ -10,6 +10,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="{{url_for( 'static', filename='styles/nicepage.css' )}}" media="screen">
     <link rel="stylesheet" href="{{url_for( 'static', filename='styles/dashboard.css' )}}" media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script class="u-script" type="text/javascript" src="{{url_for( 'static', filename='scripts/jquery-1.9.1.min.js' )}}" defer=" "></script>
     <script class="u-script" type="text/javascript" src="{{url_for( 'static', filename='scripts/nicepage.js' )}}" defer=" "></script>
     <meta name="generator" content="Nicepage 3.27.1, nicepage.com">
@@ -43,7 +44,6 @@
                 </div>
                 <div class="u-nav-container">
                     <ul class="u-nav u-spacing-25 u-unstyled">
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda/reserva" style="padding: 8px 0px;">Habitacion</a>
                         </li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
                         </li>
@@ -60,8 +60,6 @@
                         <div class="u-inner-container-layout u-sidenav-overflow">
                             <div class="u-menu-close"></div>
                             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda/reserva" style="padding: 8px 0px;">Habitacion</a>
-                                </li>
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
                                 </li>
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/perfil/admindashboard" style="padding: 8px 0px;">Dashboard</a>
@@ -99,9 +97,7 @@
                     <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-3359" role="tabpanel" aria-labelledby="link-tab-3359">
                         <div class="u-container-layout u-container-layout-1">
                             <div class="u-form u-form-1">
-                                <form action="https://nicepage.com/editor/Forms/Process" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
-                                    <input type="hidden" id="siteId" name="siteId" value="813941">
-                                    <input type="hidden" id="pageId" name="pageId" value="813947">
+                                <form action="/inicio/perfil/admindashboard" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" name="form" style="padding: 10px;">
                                     <div class="u-form-group u-form-select u-form-group-1">
                                         <label for="select-0646" class="u-form-control-hidden u-label"></label>
                                         <div class="u-form-select-wrapper">
@@ -113,7 +109,11 @@
                                         </div>
                                     </div>
                                     <div class="u-align-right u-form-group u-form-submit">
-                                        <a href="#" class="u-btn u-btn-submit u-button-style">Listar</a>
+                                        <a href="#" class="u-btn u-btn-submit u-button-style">Eliminar</a>
+                                        <input type="submit" value="submit" class="u-form-control-hidden">
+                                    </div>
+                                    <div class="u-align-right u-form-group u-form-submit">
+                                        <a href="#" class="u-btn u-btn-submit u-button-style">Agregar</a>
                                         <input type="submit" value="submit" class="u-form-control-hidden">
                                     </div>
                                     <div class="u-form-send-message u-form-send-success"> Gracias! Tu mensaje ha sido enviado. </div>
@@ -133,33 +133,23 @@
                                         <tr style="height: 59px;">
                                             <td class="u-table-cell">Nombre</td>
                                             <td class="u-table-cell">Ultimo Login</td>
-                                            <td class="u-table-cell">Permisos</td>
+                                            <td class="u-table-cell">Rol</td>
                                             <td class="u-table-cell">Accion</td>
                                         </tr>
+                                        {% for key,value in num.items() %}
                                         <tr style="height: 45px;">
-                                            <td class="u-table-cell">Row 1</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell u-table-cell-7">Lista de permisos</td>
-                                            <td class="u-table-cell u-table-cell-8">Aqui va el switch</td>
+                                            <td class="u-table-cell">{{key}}</td>
+                                            <td class="u-table-cell">{{value}}</td>
+                                            <td class="u-table-cell u-table-cell-7">Usurio</td>
+                                            <td class="u-table-cell u-table-cell-8">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                                </div>
+                                            </td>
                                         </tr>
-                                        <tr style="height: 45px;">
-                                            <td class="u-table-cell">Row 2</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell"> Lista de permisos</td>
-                                            <td class="u-table-cell"> Aqui va el switch</td>
-                                        </tr>
-                                        <tr style="height: 45px;">
-                                            <td class="u-table-cell">Row 3</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell"> Lista de permisos</td>
-                                            <td class="u-table-cell"> Aqui va el switch</td>
-                                        </tr>
-                                        <tr style="height: 45px;">
-                                            <td class="u-table-cell">Row 4</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell"> Lista de permisos</td>
-                                            <td class="u-table-cell"> Aqui va el switch</td>
-                                        </tr>
+                                        {% endfor %}
+
                                     </tbody>
                                 </table>
                             </div>

@@ -4,15 +4,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="What is Accordion">
-    <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>login</title>
     <link rel="stylesheet" href="{{url_for( 'static', filename='styles/nicepage.css' )}}" media="screen">
     <link rel="stylesheet" href="{{url_for( 'static', filename='styles/dashboard.css' )}}" media="screen">
     <script class="u-script" type="text/javascript" src="{{url_for( 'static', filename='scripts/jquery-1.9.1.min.js' )}}" defer=" "></script>
     <script class="u-script" type="text/javascript" src="{{url_for( 'static', filename='scripts/nicepage.js' )}}" defer=" "></script>
-    <meta name="generator" content="Nicepage 3.27.1, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
 
@@ -46,8 +43,6 @@
                         </li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
                         </li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/perfil/admindashboard" style="padding: 8px 0px;">Dashboard</a>
-                        </li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda" style="padding: 8px 0px;">Reservar</a>
                         </li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio" style="padding: 8px 0px;">Inicio</a>
@@ -62,8 +57,6 @@
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda/reserva" style="padding: 8px 0px;">Habitacion</a>
                                 </li>
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
-                                </li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/perfil/admindashboard" style="padding: 8px 0px;">Dashboard</a>
                                 </li>
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda" style="padding: 8px 0px;">Reservar</a>
                                 </li>
@@ -83,30 +76,23 @@
     <section class="u-align-center u-clearfix u-section-1" id="sec-8349">
         <div class="u-align-left u-clearfix u-sheet u-sheet-1">
             <div class="u-align-center u-form u-form-1">
-                <form action="https://nicepage.com/editor/Forms/Process" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
-                    <input type="hidden" id="siteId" name="siteId" value="813941">
-                    <input type="hidden" id="pageId" name="pageId" value="823112">
-                    <div class="u-form-group u-form-name">
-                        <label for="name-5301" class="u-form-control-hidden u-label"></label>
-                        <input type="text" placeholder="Introduzca su usuario" id="name-5301" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                <form action="" method="post" novalidate>
+                    {{ form.hidden_tag() }}
+                    <div>
+                        {{ form.email.label(class="u-label") }} {{ form.email(type="email", placeholder="Email", class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white") }}<br> {% for error in form.email.errors %}
+                        <span style="color: red;">{{ error }}</span> {% endfor %}
                     </div>
-                    <div class="u-form-email u-form-group">
-                        <label for="email-5301" class="u-form-control-hidden u-label"></label>
-                        <input type="email" placeholder="Introduzca una dirección de correo electrónico válida" id="email-5301" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                    <div>
+                        {{ form.password.label(class="u-label") }} {{ form.password(placeholder="Contraseña", class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white") }}<br> {% for error in form.password.errors %}
+                        <span style="color: red;">{{ error }}</span> {% endfor %}
                     </div>
-                    <div class="u-form-group u-form-group-3">
-                        <label for="text-a1fc" class="u-form-control-hidden u-label"></label>
-                        <input type="text" placeholder="Introduzca su contraseña" id="text-a1fc" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                    </div>
+                    <div>{{ form.remember_me() }} {{ form.remember_me.label }}</div>
                     <div class="u-align-center u-form-group u-form-submit">
-                        <a href="#" class="u-btn u-btn-submit u-button-style">Login</a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
+                        {{ form.submit(class="u-btn u-button-style") }}
                     </div>
-                    <div class="u-form-send-message u-form-send-success"> Gracias! Tu mensaje ha sido enviado. </div>
-                    <div class="u-form-send-error u-form-send-message"> No se puede enviar su mensaje. Por favor, corrija los errores y vuelva a intentarlo. </div>
-                    <input type="hidden" value="" name="recaptchaResponse">
                 </form>
             </div>
+            <div>¿No tienes cuenta? <a href="{{ url_for('registro') }}">Regístrate</a></div>
         </div>
     </section>
 
