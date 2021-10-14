@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 from forms import FormularioLogin, FormularioRegistro
 from flask_login import LoginManager, current_user, login_user, logout_user
-import flask_login
-from modelos import usuarios, Usuario, get_usuario
+from modelos import users, get_user, User
 from werkzeug.urls import url_parse
 
 
@@ -13,12 +12,9 @@ app.config['SECRET_KEY'] = '7110c8ae51a4b5af97be6534caef90e4bb9bdcb3380af008f90b
 
 login_manager = LoginManager(app)
 
-@login_manager.user_loader
-def load_user(id_usuario):
-    for usuario in usuarios:
-        if usuario.id == int(id_usuario):
-            return usuario
-    return None
+login_manager.login_view = "login"
+
+
 
 
 @app.route("/")
@@ -48,46 +44,54 @@ def dashboard():
 
 
 
+@app.route("/registo", methods=["GET", "POST"])
+def registro():
+    if current_user.is_authenticated:
+        return redirect(url_for('inicio'))
+    form = FormularioRegistro()
+    if form.validate_on_submit():
+        name = form.name.data
+        email = form.email.data
+        password = form.password.data
+        # Creamos el usuario y lo guardamos
+        user = User(len(users) + 1, name, email, password)
+        users.append(user)
+        # Dejamos al usuario logueado
+        login_user(user, remember=True)
+        next_page = request.args.get('next', None)
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('inicio')
+        return redirect(next_page)
+    return render_template("registro.html", form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('inicio'))
     form = FormularioLogin()
     if form.validate_on_submit():
-        user = get_usuario(form.email.data)
+        user = get_user(form.email.data)
         if user is not None and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             next_page = request.args.get('next')
             if not next_page or url_parse(next_page).netloc != '':
-                next_page = url_for('index')
+                next_page = url_for('inicio')
             return redirect(next_page)
     return render_template('login.html', form=form)
 
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('inicio'))
 
-@app.route("/registro", methods=["GET", "POST"])
-def registro():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form = FormularioRegistro()
-    if form.validate_on_submit():
-        name = form.name.data
-        email = form.email.data
-        password = form.password.data
-        # Creación y guardado de usuario
-        usuario = Usuario(len(usuarios) + 1, name, email, password)
-        usuarios.append(usuarios)
-        # Dejamos al usuario logueado
-        login_user(usuario, remember=True)
-        next_page = request.args.get('next', None)
-        if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('index')
-        return redirect(next_page)
-    return render_template("registro.html", form=form)
+@login_manager.user_loader
+def load_user(user_id):
+    for user in users:
+        if user.id == int(user_id):
+            return user
+    return None
+
+
 
 
 if __name__ == '__main__':

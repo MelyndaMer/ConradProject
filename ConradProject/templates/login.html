@@ -39,8 +39,6 @@
                 </div>
                 <div class="u-nav-container">
                     <ul class="u-nav u-spacing-25 u-unstyled">
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda/reserva" style="padding: 8px 0px;">Habitacion</a>
-                        </li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
                         </li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda" style="padding: 8px 0px;">Reservar</a>
@@ -54,8 +52,6 @@
                         <div class="u-inner-container-layout u-sidenav-overflow">
                             <div class="u-menu-close"></div>
                             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda/reserva" style="padding: 8px 0px;">Habitacion</a>
-                                </li>
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login" style="padding: 8px 0px;">Login</a>
                                 </li>
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/inicio/busqueda" style="padding: 8px 0px;">Reservar</a>
@@ -78,6 +74,10 @@
             <div class="u-align-center u-form u-form-1">
                 <form action="" method="post" novalidate>
                     {{ form.hidden_tag() }}
+
+                    <div>
+
+                    </div>
                     <div>
                         {{ form.email.label(class="u-label") }} {{ form.email(type="email", placeholder="Email", class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white") }}<br> {% for error in form.email.errors %}
                         <span style="color: red;">{{ error }}</span> {% endfor %}
